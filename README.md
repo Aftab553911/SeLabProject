@@ -1,5 +1,16 @@
-Project Title : job Hunter App
-project Technology : Flutter Android Studio
-Project Details :       Its great opportunity app for searching and getting  jobs. Job hunting apps aim to streamline the job search process, provide valuable resources, and connect job seekers with potential employers. Their success often depends on the quality of job listings, user experience, and the depth of their networking and educational resources.
-Developer name :Ifrah Khan
-Course name : SE lab
+# untitled
+
+A new Flutter project.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
