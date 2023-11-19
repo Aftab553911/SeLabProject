@@ -1,6 +1,37 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
 class MyNetwork extends StatelessWidget {
+
+
+  void sendDataToServer(String name, String action, String additionalData) async {
+    try {
+      String serverUrl = 'http://localhost:3007/connect'; // Replace with your actual server URL
+      Map<String, dynamic> data = {
+        'name': name,
+        'action': action,
+        'additionalData': additionalData,
+      };
+
+      var response = await http.post(
+        Uri.parse(serverUrl),
+        body: jsonEncode(data),
+        headers: {"Content-Type":"application/json"},
+      );
+
+      if (response.statusCode == 200) {
+        print('Server Response: ${response.body}');
+        // Handle success - Update UI or perform other actions
+      } else {
+        print('Request failed with status: ${response.statusCode}');
+        // Handle error - Display an error message or take appropriate action
+      }
+    } catch (error) {
+      print('Error sending data: $error');
+      // Handle exception - Display an error message or take appropriate action
+    }
+  }
   @override
   Widget build(BuildContext context) {
     print("Building MyNetwork widget"); // Added print statement
@@ -81,21 +112,10 @@ class MyNetwork extends StatelessWidget {
                     color: Colors.black,
                   ),
                   SizedBox(height: 10),
-                  // Builder(
-                  //   builder: (BuildContext context) {
-                  //     print("Building Image 2");
-                  //     return Image.asset(
-                  //       "assets/images/friend.png",
-                  //       width: 103,
-                  //       height: 32,
-                  //     );
-                  //   },
-                  // ),
-                  SizedBox(height: 10),
                   ElevatedButton(
                     onPressed: () {
                       // Add your connect logic here
-                      print("Connect button pressed");
+                      sendDataToServer('Mahnoor Akram', 'connect', 'Replace this with real data');
                     },
                     child: Text("Connect"),
                   ),
@@ -132,7 +152,7 @@ class MyNetwork extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       // Add your connect logic here
-                      print("Connect button pressed");
+                      sendDataToServer('Sarooosh Ziyaa', 'connect', 'Replace this with real data');
                     },
                     child: Text("Connect"),
                   ),
@@ -145,6 +165,7 @@ class MyNetwork extends StatelessWidget {
     );
   }
 }
+
 
 class ResponsiveContainer extends StatelessWidget {
   final double width;

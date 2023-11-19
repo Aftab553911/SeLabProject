@@ -8,8 +8,8 @@ import 'package:http/http.dart' as http;
 import 'config.dart';
 
 class Registration extends StatefulWidget{
-  @override
-  _RegistrationState createState() => _RegistrationState();
+@override
+_RegistrationState createState() => _RegistrationState();
 }
 class _RegistrationState extends State<Registration> {
   TextEditingController emailController = TextEditingController();

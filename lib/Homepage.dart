@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'Anotherpage.dart';
 import 'my_network_page.dart';
 import 'notify.dart';
 import 'my_job.dart';
+import '';
 
 class HomePage extends StatefulWidget {
   @override
@@ -19,10 +21,19 @@ class _ClassHomePageState extends State<HomePage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Image.asset(
-              'assets/images/linkedin.png',
-              fit: BoxFit.contain,
-              height: 32,
+            GestureDetector(
+              onTap: () {
+                // Navigation logic for the image tap
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => anotherpage()), // Replace with the desired page
+                );
+              },
+              child: Image.asset(
+                'assets/images/linkedin.png',
+                fit: BoxFit.contain,
+                height: 32,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
