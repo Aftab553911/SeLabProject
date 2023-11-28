@@ -1,8 +1,16 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/Homepage.dart';
+import 'Homepage.dart';
+import 'dataentryform.dart';
+import 'notify.dart';
 
-class FriendsPage2 extends StatelessWidget {
+class FriendsPage2 extends StatefulWidget {
+  @override
+  _FriendsPage2State createState() => _FriendsPage2State();
+}
+
+class _FriendsPage2State extends State<FriendsPage2> {
   final List<Friend> friends = [
     Friend(name: 'Frontend-Developer', email: 'www-frontend@gmail.com', description: 'A rapidly-growing company that transmits high-definition water data to users smartphones by harnessing the power of ultrasound, is looking for a Flutter Engineer. The engineer will be responsible for streamlining the data delivery and improving customer experience through app improvements and stabilization. The startup is building a non-intrusive, all-purpose flow meter that can track and monitor water use and instantly identify water leaks. This is an excellent opportunity for developers who are interested in working in a dynamic, fast-paced, and agile environment.',AboutUs: 'A rapidly-growing company that transmits high-definition water data to users smartphones by harnessing the power of ultrasound, is looking for a Flutter Engineer. The engineer will be responsible for streamlining the data delivery and improving customer experience through app improvements and stabilization. The startup is building a non-intrusive, all-purpose flow meter that can track and monitor water use and instantly identify water leaks. This is an excellent opportunity for developers who are interested in working in a dynamic, fast-paced, and agile environment.', imageUrl: 'assets/images/friend.jpeg'),
     Friend(name: 'Traniee Software Engineer', email: 'trainee@gmail.com', description: 'INTECH Automation Intelligence is looking for an energized and capable Trainee Software Engineer (Information Systems)',AboutUs:'INTECH Automation Intelligence has been helping businesses transform for the future through next-generation Automation and Digital technologies for the past 30 years and counting. We are a globally renowned engineering company specializing in automation, electrical, energy transition, and digitalization solutions. Our application-specific solutions diversified and technically backed portfolio and expertise in equipment ', imageUrl: 'assets/images/friend2.jpeg'),
@@ -21,7 +29,6 @@ class FriendsPage2 extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.logout),
             onPressed: () {
-              // Navigate back to the login page and remove all previous routes
               Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(builder: (context) => HomePage()),
@@ -61,7 +68,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3, // Number of tabs
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           title: Text('Profile: ${friend.name}'),
@@ -140,6 +147,10 @@ class ProfilePage extends StatelessWidget {
                   SizedBox(width: 16),
                   ElevatedButton(
                     onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                          builder: (context) => DataEntryForm()));
                       // Implement hire functionality
                     },
                     style: ElevatedButton.styleFrom(
@@ -185,16 +196,13 @@ class ProfilePage extends StatelessWidget {
       ),
     );
   }
-}
-
-
+} // ..// . Rest of your ProfilePage implementation
 class Friend {
   final String name;
   final String email;
   final String description;
   final String AboutUs;
   final String imageUrl;
-
   Friend(
       {required this.name, required this.email, required this.description,required this.AboutUs, required this.imageUrl});
 }

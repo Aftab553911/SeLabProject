@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:untitled/myprofilepage.dart';
 import 'package:untitled/registration.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -13,7 +14,6 @@ class SignInPage extends StatefulWidget {
   @override
   _SignInPageState createState() => _SignInPageState();
 }
-
 class _SignInPageState extends State<SignInPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -48,7 +48,7 @@ class _SignInPageState extends State<SignInPage> {
       if(jsonResponse['status']){
         var myToken = jsonResponse['token'];
         prefs.setString('token', myToken);
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>DataEntryFormforprofile()));
       }else{
         print('Something went wrong');
       }
