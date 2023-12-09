@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 import 'package:flutter/cupertino.dart';
+=======
+>>>>>>> 09eaa250dee8e1b66ae8a92260a39f27745e2288
 import 'package:flutter/material.dart';
 import 'Homepage.dart';
 import 'dataentryform.dart';
@@ -22,6 +25,8 @@ class _FriendsPageState extends State<FriendsPage> {
 
   @override
   Widget build(BuildContext context) {
+    friends.sort((a, b) => a.name.compareTo(b.name));
+
     return Scaffold(
       appBar: AppBar(
         title: Text('JOBS'),
@@ -98,7 +103,6 @@ class ProfilePage extends StatelessWidget {
                   radius: 80,
                 ),
               ),
-              // Display Followers and Following
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -109,7 +113,7 @@ class ProfilePage extends StatelessWidget {
                         style: TextStyle(color: Colors.white),
                       ),
                       Text(
-                        '500', // Replace with actual number of followers
+                        '500',
                         style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                     ],
@@ -122,7 +126,7 @@ class ProfilePage extends StatelessWidget {
                         style: TextStyle(color: Colors.white),
                       ),
                       Text(
-                        '200', // Replace with actual number of following
+                        '200',
                         style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                     ],
@@ -130,22 +134,24 @@ class ProfilePage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20),
-              // Buttons to Follow and Hire
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {
-                      // Implement follow functionality
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white,
+<<<<<<< HEAD
                       onPrimary: Colors.blueAccent,
+=======
+                      onPrimary: Colors.blueGrey,
+>>>>>>> 09eaa250dee8e1b66ae8a92260a39f27745e2288
                     ),
                     child: Text('Follow'),
                   ),
                   SizedBox(width: 16),
                   ElevatedButton(
+<<<<<<< HEAD
                     onPressed: () {
                       Navigator.push(
                           context,
@@ -158,11 +164,18 @@ class ProfilePage extends StatelessWidget {
                       onPrimary: Colors.blue,
                     ),
                     child: Text('Apply job'),
+=======
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        onPrimary: Colors.blueGrey
+                    ),
+                    child: Text('Message'),
+>>>>>>> 09eaa250dee8e1b66ae8a92260a39f27745e2288
                   ),
                 ],
               ),
               SizedBox(height: 20),
-              // Description
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Text(
@@ -171,21 +184,11 @@ class ProfilePage extends StatelessWidget {
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
-              // Tab Bar for Portfolio, Skills, and Achievements
               Expanded(
                 child: TabBarView(
                   children: [
-                    // Portfolio Tab
                     Center(
                       child: Text('Portfolio content goes here'),
-                    ),
-                    // Skills Tab
-                    Center(
-                      child: Text('Skills content goes here'),
-                    ),
-                    // Achievements Tab
-                    Center(
-                      child: Text('Achievements content goes here'),
                     ),
                   ],
                 ),
@@ -196,7 +199,12 @@ class ProfilePage extends StatelessWidget {
       ),
     );
   }
+<<<<<<< HEAD
 } // ..// . Rest of your ProfilePage implementation
+=======
+}
+
+>>>>>>> 09eaa250dee8e1b66ae8a92260a39f27745e2288
 class Friend {
   final String name;
   final String Message;
