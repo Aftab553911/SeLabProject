@@ -48,7 +48,9 @@ class _SignInPageState extends State<SignInPage> {
       if(jsonResponse['status']){
         var myToken = jsonResponse['token'];
         prefs.setString('token', myToken);
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>DataEntryFormforprofile()));
+        //Navigator.push(context, MaterialPageRoute(builder: (context)=>DataEntryFormforprofile()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+
       }else{
         print('Something went wrong');
       }
