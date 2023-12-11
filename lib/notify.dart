@@ -1,24 +1,34 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/Homepage.dart';
+import 'Homepage.dart';
+import 'dataentryform.dart';
+import 'notify.dart';
 
-class FriendsPage extends StatelessWidget {
+class FriendsPage extends StatefulWidget {
+  @override
+  _FriendsPageState createState() => _FriendsPageState();
+}
+
+class _FriendsPageState extends State<FriendsPage> {
   final List<Friend> friends = [
-    Friend(name: 'John Smith', email: 'JohnSmith@gmail.com', description: 'Charles Otto Puth Jr. is an American singer, songwriter, and record producer. His initial exposure came through the viral success of his song covers uploaded to YouTube.', imageUrl: 'assets/images/friend.jpeg'),
-    Friend(name: 'abc', email: 'abc@gmail.com', description: 'Shawn Peter Raul Mendes is a Canadian singer-songwriter. He gained a following in 2013, when he posted song covers on the video sharing platform Vine.', imageUrl: 'assets/images/friend2.jpeg'),
-    Friend(name: 'xyz', email: 'xyz@gmail.com', description: 'Selena Marie Gomez is an American singer, actress, businesswoman and producer. She has won numerous accolades, including an American Music Award, two MTV Video Music Awards, broke 16 Guinness World Records, and received nominations for two Grammy Awards, a Golden Globe Award, and four Emmy Awards.', imageUrl: 'assets/images/friend3.jpeg'),
+    Friend(name: 'John Smith', Message: 'Send you a message', description: 'A rapidly-growing company that transmits high-definition water data to users smartphones by harnessing the power of ultrasound, is looking for a Flutter Engineer. The engineer will be responsible for streamlining the data delivery and improving customer experience through app improvements and stabilization. The startup is building a non-intrusive, all-purpose flow meter that can track and monitor water use and instantly identify water leaks. This is an excellent opportunity for developers who are interested in working in a dynamic, fast-paced, and agile environment.',AboutUs: 'A rapidly-growing company that transmits high-definition water data to users smartphones by harnessing the power of ultrasound, is looking for a Flutter Engineer. The engineer will be responsible for streamlining the data delivery and improving customer experience through app improvements and stabilization. The startup is building a non-intrusive, all-purpose flow meter that can track and monitor water use and instantly identify water leaks. This is an excellent opportunity for developers who are interested in working in a dynamic, fast-paced, and agile environment.', imageUrl: 'assets/images/friend.jpeg'),
+    Friend(name: 'Traniee Software Engineer', Message: 'trainee@gmail.com', description: 'INTECH Automation Intelligence is looking for an energized and capable Trainee Software Engineer (Information Systems)',AboutUs:'INTECH Automation Intelligence has been helping businesses transform for the future through next-generation Automation and Digital technologies for the past 30 years and counting. We are a globally renowned engineering company specializing in automation, electrical, energy transition, and digitalization solutions. Our application-specific solutions diversified and technically backed portfolio and expertise in equipment ', imageUrl: 'assets/images/friend2.jpeg'),
+    Friend(name: 'Web- Developer', Message: 'www-web@gmail.com', description: 'A rapidly-growing company that transmits high-definition water data to users smartphones by harnessing the power of ultrasound, is looking for a Flutter Engineer. The engineer will be responsible for streamlining the data delivery and improving customer experience through app improvements and stabilization. The startup is building a non-intrusive, all-purpose flow meter that can track and monitor water use and instantly identify water leaks. This is an excellent opportunity for developers who are interested in working in a dynamic, fast-paced, and agile environment.',AboutUs: 'A rapidly-growing company that transmits high-definition water data to users smartphones by harnessing the power of ultrasound, is looking for a Flutter Engineer. The engineer will be responsible for streamlining the data delivery and improving customer experience through app improvements and stabilization. The startup is building a non-intrusive, all-purpose flow meter that can track and monitor water use and instantly identify water leaks. This is an excellent opportunity for developers who are interested in working in a dynamic, fast-paced, and agile environment.', imageUrl: 'assets/images/friend.jpeg'),
+    Friend(name: 'Traniee Software Engineer', Message: 'trainee@gmail.com', description: 'INTECH Automation Intelligence is looking for an energized and capable Trainee Software Engineer (Information Systems)',AboutUs:'INTECH Automation Intelligence has been helping businesses transform for the future through next-generation Automation and Digital technologies for the past 30 years and counting. We are a globally renowned engineering company specializing in automation, electrical, energy transition, and digitalization solutions. Our application-specific solutions diversified and technically backed portfolio and expertise in equipment ', imageUrl: 'assets/images/friend2.jpeg'),
+    Friend(name: 'iOS Developer', Message: 'wwwdeveloper@gmail.com', description: 'Selena Marie Gomez is an American singer, actress, businesswoman and producer. She has won numerous accolades, including an American Music Award, two MTV Video Music Awards, broke 16 Guinness World Records, and received nominations for two Grammy Awards, a Golden Globe Award, and four Emmy Awards.', AboutUs: 'Crossover is the worlds #1 source of full-time remote jobs. Our clients offer top-tier pay for top-tier talent. Were recruiting this role for our client, gt.school. Have you got what it takes?', imageUrl: 'assets/images/friend3.jpeg'),
+    Friend(name: 'iOS Developer', Message: 'wwwdeveloper@gmail.com', description: 'Selena Marie Gomez is an American singer, actress, businesswoman and producer. She has won numerous accolades, including an American Music Award, two MTV Video Music Awards, broke 16 Guinness World Records, and received nominations for two Grammy Awards, a Golden Globe Award, and four Emmy Awards.', AboutUs: 'Crossover is the worlds #1 source of full-time remote jobs. Our clients offer top-tier pay for top-tier talent. Were recruiting this role for our client, gt.school. Have you got what it takes?', imageUrl: 'assets/images/friend3.jpeg'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Friends'),
+        title: Text('JOBS'),
         actions: [
           IconButton(
             icon: Icon(Icons.logout),
             onPressed: () {
-              // Navigate back to the login page and remove all previous routes
               Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(builder: (context) => HomePage()),
@@ -36,7 +46,7 @@ class FriendsPage extends StatelessWidget {
               backgroundImage: AssetImage(friends[index].imageUrl),
             ),
             title: Text(friends[index].name),
-            subtitle: Text('Email: ${friends[index].email}'),
+            subtitle: Text('Email: ${friends[index].Message}'),
             onTap: () {
               Navigator.push(
                 context,
@@ -58,7 +68,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3, // Number of tabs
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           title: Text('Profile: ${friend.name}'),
@@ -75,7 +85,7 @@ class ProfilePage extends StatelessWidget {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Colors.white, Colors.orange],
+              colors: [Colors.white, Colors.lightBlueAccent],
             ),
           ),
           child: Column(
@@ -130,20 +140,24 @@ class ProfilePage extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white,
-                      onPrimary: Colors.orange,
+                      onPrimary: Colors.blueAccent,
                     ),
                     child: Text('Follow'),
                   ),
                   SizedBox(width: 16),
                   ElevatedButton(
                     onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DataEntryForm()));
                       // Implement hire functionality
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white,
-                      onPrimary: Colors.orange,
+                      onPrimary: Colors.blue,
                     ),
-                    child: Text('Hire'),
+                    child: Text('Apply job'),
                   ),
                 ],
               ),
@@ -182,15 +196,13 @@ class ProfilePage extends StatelessWidget {
       ),
     );
   }
-}
-
-
+} // ..// . Rest of your ProfilePage implementation
 class Friend {
   final String name;
-  final String email;
+  final String Message;
   final String description;
+  final String AboutUs;
   final String imageUrl;
-
   Friend(
-      {required this.name, required this.email, required this.description, required this.imageUrl});
+      {required this.name, required this.Message, required this.description,required this.AboutUs, required this.imageUrl});
 }

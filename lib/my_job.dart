@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'Homepage.dart';
@@ -150,7 +149,7 @@ class ProfilePage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                          builder: (context) => DataEntryForm()));
+                              builder: (context) => DataEntryForm()));
                       // Implement hire functionality
                     },
                     style: ElevatedButton.styleFrom(
